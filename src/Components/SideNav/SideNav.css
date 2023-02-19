@@ -1,6 +1,16 @@
-body {
-}
-#SideNav {
+#sideNav {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+#sideNavContainer {
+  display: flex;
+  flex-direction: row;
+  background-image: url('/src/images/bg-sidebar-desktop.svg');
+  width: 300px;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: cover;
+  margin-top: 15px;
+  margin-right: 100px;
 }

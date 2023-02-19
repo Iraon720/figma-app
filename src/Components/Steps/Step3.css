@@ -1,0 +1,10 @@
+.monthlyOpts{
+  display: flex;
+  flex-direction: column;
+  border-color: black;
+}
+.opts{
+  display: flex;
+  flex-direction: row;
+}
+

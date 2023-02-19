@@ -15,13 +15,30 @@ class SideNav extends React.Component {
   }
 
   render() {
-    return array.map((item) => (
-      <div>
-        <h2>{item.Step}</h2>
-        <p>{item.Text}</p>
+    return (
+      <div id='sideNavContainer'>
+        <div>
+          <div id='numbers'> 1</div>
+          <div id='numbers'> 2</div>
+          <div id='numbers'> 3</div>
+          <div id='numbers'> 4</div>
+        </div>
+        <div>
+          <div id='numbers'>Sample 1</div>
+          <div id='numbers'>Sample 2</div>
+          <div id='numbers'>Sample 3</div>
+        </div>
       </div>
-    ));
+    );
   }
 }
 
 export default SideNav;
+
+// array.map((item) => ()
+{
+  /* <div id='sideNav'>
+          <h2>{item.Step}</h2>
+          <p>{item.Text}</p>
+          <div /> */
+}

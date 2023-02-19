@@ -1,0 +1,41 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
+
+#step2Container{
+font-family: 'Ubuntu', sans-serif;
+margin-right: 50px;
+  height: 300px;
+  width: 250px
+}
+
+
+.header{
+  color:  hsl(213, 96%, 18%);
+
+}
+.subheader {
+  color: grey;
+  font-size: 18px;
+}
+.monthlyOpts{
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+.yearlyOpts{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#arcade, #advanced, #pro{
+  display: flex ;
+  flex-direction: column;
+  border-radius: 10px;
+  border-color: black;
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+}

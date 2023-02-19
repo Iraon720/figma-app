@@ -1,4 +1,5 @@
 import React from 'react';
+import './Step1.css';
 
 class Step1 extends React.Component {
   constructor(props) {
@@ -14,15 +15,27 @@ class Step1 extends React.Component {
         <form id='form1'>
           <label>
             Name
-            <input type='text' placeholder='e.g. Stephen King' />
+            <input
+              type='text'
+              className='form'
+              placeholder='e.g. Stephen King'
+            />
           </label>
           <label>
             Email Address
-            <input type='email' placeholder='e.g. stephenking@lorem.com' />
+            <input
+              type='email'
+              className='form'
+              placeholder='e.g. stephenking@lorem.com'
+            />
           </label>
           <label>
             Phone Number
-            <input type='text' placeholder='e.g. +1 234 567 890' />
+            <input
+              type='text'
+              className='form'
+              placeholder='e.g. +1 234 567 890'
+            />
           </label>
         </form>
       </div>
