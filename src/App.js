@@ -24,9 +24,9 @@ class App extends React.Component {
       <div id='body'>
         <div id='cardHolder'>
           <SideNav />
-          {/* <Step1 /> */}
+          <Step1 />
           {/* <Step2/> */}
-          <Step3/>
+          {/* <Step3/> */}
           <Buttons />
         </div>
       </div>

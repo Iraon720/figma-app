@@ -17,16 +17,24 @@ class SideNav extends React.Component {
   render() {
     return (
       <div id='sideNavContainer'>
-        <div>
-          <div id='numbers'> 1</div>
-          <div id='numbers'> 2</div>
-          <div id='numbers'> 3</div>
-          <div id='numbers'> 4</div>
+        <div className='step#s'>
+          <div id='step1'> 1</div>
+          <div id='step2'> 2</div>
+          <div id='step3'> 3</div>
+          <div id='step4'> 4</div>
         </div>
-        <div>
-          <div id='numbers'>Sample 1</div>
-          <div id='numbers'>Sample 2</div>
-          <div id='numbers'>Sample 3</div>
+        <div id='sideNavSteps'>
+          <h3 className='top'>Step 1</h3>
+          <h2 className='bottom'>Your Info</h2>
+
+          <h3 className='top'>Step 2</h3>
+          <h2 className='bottom'>Select Plan</h2>
+
+          <h3 className='top'>Step 3</h3>
+          <h2 className='bottom'>Add-Ons</h2>
+
+          <h3 className='top'>Step 3</h3>
+          <h2 className='bottom'>Summary</h2>
         </div>
       </div>
     );
