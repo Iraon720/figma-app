@@ -8,10 +8,26 @@ import Buttons from './Components/Buttons';
 import './App.css';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+  constructor() {
+    super();
+    this.state = {
+      currentStep: 1,
+    };
+    this.handleStepDecrease = this.handleStepDecrease.bind(this);
+    this.handleStepIncrease = this.handleStepIncrease.bind(this);
+    this.handleChangeStep = this.handleChangeStep.bind(this);
   }
+  handleStepIncrease = () => {
+    this.setState({currentStep:this.state.currentStep +1 });
+  };
+  handleStepDecrease = () => {
+    this.setState({currentStep: this.state.currentStep -1 });
+  };
+  //Handles clicking numbers on sideNav
+  handleChangeStep = (num) => {
+    this.setState({currentStep: num });
+  }
+
   // test() {
   //   fetch('/verifyEmail', {
   //     method: 'post',
@@ -23,20 +39,22 @@ class App extends React.Component {
     return (
       <div id='body'>
         <div id='cardHolder'>
-          <SideNav />
-          <Step1 />
-          {/* <Step2/> */}
-          {/* <Step3/> */}
-          <Buttons />
+          <SideNav currentStep={this.state.currentStep} changeStep={this.handleChangeStep} />
+          {this.state.currentStep === 1 && (
+          <Step1/>
+         )}
+         {/* <Step2/> */}
+          
+          <Buttons 
+          handleNext={this.handleStepIncrease}
+          handleGoBack={this.handleStepDecrease}/>
         </div>
       </div>
     );
   }
 }
 
+
+
 export default App;
-{
-  /* <Step2 />
-          <Step3 />
-          <Step4 /> */
-}
+

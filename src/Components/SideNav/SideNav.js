@@ -1,4 +1,5 @@
 import React from 'react';
+import Step1 from '../Steps/Step1';
 import './SideNav.css';
 
 const array = [
@@ -7,39 +8,64 @@ const array = [
   { Step: 'Step 3', Text: 'Add-Ons' },
   { Step: 'Step 4', Text: 'Summary' },
 ];
+const activeStyles = { color: 'red' };
+const defaultStyles = { color: 'white' };
 
-class SideNav extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div id='sideNavContainer'>
-        <div className='step#s'>
-          <div id='step1'> 1</div>
-          <div id='step2'> 2</div>
-          <div id='step3'> 3</div>
-          <div id='step4'> 4</div>
+const SideNav = ({currentStep,changeStep}) => {
+  return (
+    <div id='sideNavContainer'>
+      <div className='stepNum'>
+        {/* if the current step that we are getting from props = 1 then we want to apply this style object. */}
+        <div
+          id='step1'
+          className='active'
+          style={currentStep === 1 ? activeStyles : defaultStyles}
+        >
+          1
         </div>
-        <div id='sideNavSteps'>
-          <h3 className='top'>Step 1</h3>
-          <h2 className='bottom'>Your Info</h2>
-
-          <h3 className='top'>Step 2</h3>
-          <h2 className='bottom'>Select Plan</h2>
-
-          <h3 className='top'>Step 3</h3>
-          <h2 className='bottom'>Add-Ons</h2>
-
-          <h3 className='top'>Step 3</h3>
-          <h2 className='bottom'>Summary</h2>
+        <div
+          id='step2'
+          className='active'
+          style={currentStep === 2 ? activeStyles : defaultStyles}
+        >
+          2
+        </div>
+        <div
+          id='step3'
+          style={currentStep === 3 ? activeStyles : defaultStyles}
+          className='active'
+        >
+          3
+        </div>
+        <div
+          id='step4'
+          style={currentStep === 4 ? activeStyles : defaultStyles}
+          className='active'
+        >
+          4
         </div>
       </div>
-    );
-  }
-}
+      <div id='sideNavSteps'>
+        <section onClick={() => changeStep(1)}>
+          <p className='top'>Step 1</p>
+          <p className='bottom'>Your Info</p>
+        </section>
+        <section onClick={() => changeStep(2)}>
+          <p className='top'>Step 2</p>
+          <p className='bottom'>Select Plan</p>
+        </section>
+        <section onClick={() => changeStep(3)}>
+          <p className='top'>Step 3</p>
+          <p className='bottom'>Add-Ons</p>
+        </section>
+        <section onClick={() => changeStep(4)}>
+          <p className='top'>Step 4</p>
+          <p className='bottom'>Summary</p>
+        </section>
+      </div>
+    </div>
+  );
+};
 
 export default SideNav;
 

@@ -3,7 +3,10 @@ import './Step2.css'
 class Step2 extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      plans: [],
+      
+    };
   }
 
   render() {
