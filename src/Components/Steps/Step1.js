@@ -57,26 +57,7 @@ class Step1 extends React.Component {
             ></input>
           </div>
 
-          {/* <label>
-            Email Address
-            <input
-              type='email'
-              className='form'
-              placeholder='e.g. stephenking@lorem.com'
-              value={this.props.email}
-              onChange={this.props.handleEmail}
-            />
-          </label>
-          <label>
-            Phone Number
-            <input
-              type='text'
-              className='form'
-              placeholder='e.g. +1 234 567 890'
-              value={this.props.number}
-              onChange={this.props.handleNumber}
-            />
-          </label> */}
+       
         </form>
       </div>
     );

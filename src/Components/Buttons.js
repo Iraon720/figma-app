@@ -19,7 +19,7 @@ class Buttons extends React.Component {
           
         }}
       >
-        <div style={{ color: '#022959' }}>
+        <div className='next'style={{ color: '#022959' }}>
           <button onClick={this.props.handleNext}>Next Step</button>
         </div>
         <div style={{ color: 'white', marginRight: '6rem' }}>

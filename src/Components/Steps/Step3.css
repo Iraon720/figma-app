@@ -1,9 +1,101 @@
-.stepThreeAddOns {
-  diplay:flex;
-  position: absolute;
+.add-on-container {
+}
+.add-on {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 1px;
+  border-radius: 7px;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+
+  row-gap: 16px;
+}
+.Online {
+  border-style: solid;
+  border-color: #d6d9e6;
+  display: flex;
+  flex-direction: row;
+  width: 450px;
+  height: 81px;
+  justify-content: space-evenly;
+  border-radius: 8px;
+}
+.Storage {
+  border-style: solid;
+  border-color: #d6d9e6;
+  display: flex;
+  flex-direction: row;
+  width: 450px;
+  height: 81px;
+  justify-content: space-evenly;
+  border-radius: 8px;
+}
+.Profile {
+  border-style: solid;
+  border-color: #d6d9e6;
+  display: flex;
+  flex-direction: row;
+  width: 450px;
+  height: 81px;
+  justify-content: space-evenly;
+  border-radius: 8px;
+}
+.add-on-container h1 {
+  color: #022959;
+  font-weight: 500;
+}
+.add-on-container p {
+  color: #9699aa;
+}
+.add-on-container {
+  margin-left: 270px;
+  margin-top: 30px;
 }
 
-.onlineService {
-  border-style:solid;
-  height: 200px;
+.add-on:hover {
+}
+.checkbox {
+  margin-top: 1.5rem;
+  background-color: #483eff;
+  color: white;
+  width: 20px;
+  height: 20px;
+  margin-left: 2rem;
+}
+input.checkbox:checked + .checkbox {
+  margin: 0 1.5rem;
+  background-color: #483eff;
+  color: white;
+}
+ {
+}
+
+.add-on h4 {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  color: #022959;
+}
+
+.add-on p {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.add-on .description {
+  margin-left: 1.5rem;
+  flex: 1;
+}
+
+.add-on span {
+  margin-right: 1rem;
+  color: #483eff;
+  opacity: 0.9;
+  margin-top: 2rem;
+}
+
+.picked {
+  background-color: var(--Light-blue);
+  opacity: 0.8;
 }

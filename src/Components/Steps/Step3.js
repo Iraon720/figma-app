@@ -1,49 +1,64 @@
 import React from 'react';
 import './Step3.css';
-const array = [
-  { Step: 'Step 1', Text: 'Your Info' },
-  { Step: 'Step 2', Text: 'Select Plan' },
-  { Step: 'Step 3', Text: 'Add-Ons' },
-  { Step: 'Step 4', Text: 'Summary' },
+const wantMore = [
+  {
+    addOn: 'Online',
+    monthly: 1,
+    yearly: 10,
+  },
+  {
+    addOn: 'Storage',
+    monthly: 2,
+    yearly: 20,
+  },
+  {
+    addOn: 'Profile',
+    monthly: 2,
+    yearly: 20,
+  },
 ];
 class Step3 extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      addons: [
-        {
-          id: 1,
-          title: 'Online service',
-          description: '+1',
-          status: 'MONTHLY',
-        },
-      ],
-    };
-  
-   
   }
 
   render() {
     return (
-      <div className='stepThreeAddOns'>
-        <h1 className='stepThreeHeader'>Pick add-ons</h1>
-        <h2 className='stepThreeSubheader'>
-          Add-ons help enhance your gaming experience
-        </h2>
-
-        <div className='options'>
-          <div className='onlineService'>
-            <input className='check' type='checkbox'></input>
-            <div>
-              <p>Online Service</p>
-              <p>Access to multiplayer games</p>
+      <div className='add-on-container'>
+        <h1>
+          <b>Pick add-ons</b>
+        </h1>
+        <p>Add-ons help enhance your gaming experience.</p>
+        <section className='add-on'>
+          {wantMore.map((addOn, i) => (
+            <div key={i} className={addOn.addOn}>
+              <input
+                type='checkbox'
+                id={i}
+                className='checkbox'
+                onClick={() => this.props.addOnSelection(addOn)}
+              />
+              <div className='description'>
+                <h4>{addOn.addOn} service</h4>
+                <p>
+                  {addOn.addOn === 'Online'
+                    ? 'Access to multiplayer games'
+                    : addOn.addOn === 'Storage'
+                    ? 'Extra 1TB of cloud save'
+                    : addOn.addOn === 'Profile'
+                    ? 'Custom theme on your profile'
+                    : ''}
+                </p>
+              </div>
+              <span className='price'> 
+              ${this.props.billingType === 'Monthly' ? addOn.monthly + '/mo': addOn.yearly + '/yr'}
+               </span>
             </div>
-          </div>
-        </div>
+          ))}
+        </section>
       </div>
     );
   }
-  }
-
+}
 
 export default Step3;

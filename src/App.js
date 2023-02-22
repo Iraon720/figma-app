@@ -17,6 +17,9 @@ class App extends React.Component {
       number: ' ',
       selectedPlan: {},
       billingType: 'Monthly',
+      addOns: {},
+      totalPrice: 0,
+      selectedAddOns: []
     };
     this.handleStepDecrease = this.handleStepDecrease.bind(this);
     this.handleStepIncrease = this.handleStepIncrease.bind(this);
@@ -25,6 +28,9 @@ class App extends React.Component {
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleNumberChange = this.handleNumberChange.bind(this);
+    this.handleCheckBoxes = this.handleCheckBoxes.bind(this);
+    
+    this.planAddOns=this.planAddOns.bind(this);
 
     this.handleToggle = this.handleToggle.bind(this);
   }
@@ -62,6 +68,18 @@ class App extends React.Component {
       this.setState({ billingType: 'Monthly' });
     }
   };
+  //Step 3 Add-ons
+  planAddOns = (addOn) => {
+    this.setState({ addOns: addOn });
+};
+
+// Step 3 for checkboxes
+handleCheckBoxes = (e) => {
+  this.setState({selectedAddOns:e.target.checked});
+}
+
+
+
 
   // test() {
   //   fetch('/verifyEmail', {
@@ -98,7 +116,16 @@ class App extends React.Component {
                 changeBillingType={this.handleToggle}
               />
             )}
-            {this.state.currentStep === 3 && <Step3 />}
+            {this.state.currentStep === 3 && (
+              <Step3
+              addOns={this.state.addOns}
+              addOnSelection={this.planAddOns}
+              billingType={this.state.billingType}
+              addToTotal={this.handleToggle}
+              selectedAddOns={this.state.selectedAddOns} 
+              handleCheckBoxes={this.handleCheckBoxes}
+                />
+            )}
             {this.state.currentStep === 4 && <Step4 />}
 
             <Buttons
@@ -110,6 +137,7 @@ class App extends React.Component {
       </div>
     );
   }
+
 }
 
 export default App;
