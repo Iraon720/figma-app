@@ -2,14 +2,15 @@ import React from 'react';
 import Step1 from '../Steps/Step1';
 import './SideNav.css';
 
-const array = [
-  { Step: 'Step 1', Text: 'Your Info' },
-  { Step: 'Step 2', Text: 'Select Plan' },
-  { Step: 'Step 3', Text: 'Add-Ons' },
-  { Step: 'Step 4', Text: 'Summary' },
-];
-const activeStyles = { color: 'red' };
-const defaultStyles = { color: 'white' };
+// const array = [
+//   { Step: 'Step 1', Text: 'Your Info' },
+//   { Step: 'Step 2', Text: 'Select Plan' },
+//   { Step: 'Step 3', Text: 'Add-Ons' },
+//   { Step: 'Step 4', Text: 'Summary' },
+// ];
+const activeStyles = { color: '#022959', backgroundColor: '#BEE2FD'};
+const defaultStyles = { color: 'white', backgroundColor: 'transparent' };
+
 
 const SideNav = ({currentStep,changeStep}) => {
   return (
@@ -48,19 +49,27 @@ const SideNav = ({currentStep,changeStep}) => {
       <div id='sideNavSteps'>
         <section onClick={() => changeStep(1)}>
           <p className='top'>Step 1</p>
-          <p className='bottom'>Your Info</p>
+          <p className='bottom'>
+            <b>Your Info</b>
+          </p>
         </section>
         <section onClick={() => changeStep(2)}>
           <p className='top'>Step 2</p>
-          <p className='bottom'>Select Plan</p>
+          <p className='bottom'>
+            <b>Select Plan</b>
+          </p>
         </section>
         <section onClick={() => changeStep(3)}>
           <p className='top'>Step 3</p>
-          <p className='bottom'>Add-Ons</p>
+          <p className='bottom'>
+            <b>Add-Ons</b>
+          </p>
         </section>
         <section onClick={() => changeStep(4)}>
           <p className='top'>Step 4</p>
-          <p className='bottom'>Summary</p>
+          <p className='bottom'>
+            <b>Summary</b>
+          </p>
         </section>
       </div>
     </div>

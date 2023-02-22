@@ -1,7 +1,66 @@
-#form1 {
+#personalForm {
+    flex-basis: 450px;
+    margin-left: 300px;
+    
+    
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: var(--Marine-blue);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+input {
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px;
+    border-color: grey;
+    border-style: solid;
+    margin-bottom: 1rem;
+    color: var(--Marine-blue);
+    letter-spacing: 2px;
+    font-weight: bold;
+    width: 200px;
+  height: 10px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input:hover {
+    border: 1px solid var(--Marine-blue);
+}
+
+
+
+.required {
+    border-color: red;
+}
+
+.alert {
+    margin: 0 0 1rem 0;
+    color: red;
+    direction: rtl;
+}
+
+
+
+
+/* #form1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+   padding: 20px;
+  border-style: solid;
+  width: 550px;
   
 }
 .form {
@@ -14,28 +73,38 @@
 }
 
 #personalForm {
-  width: 400px;
+  position: absolute;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+
+  
 }
 
-form {
-  padding: 20px;
-  border-style: solid;
-}
+
+
 
 label {
   margin-top: 20px;
 margin-bottom: 20px;
+
   
 }
 input {
-  width: 20px;
+  width: 200px;
   height: 500px;
   border-style: solid;
 }
 .p{
   color: grey;
 }
-.per{
+h1{
   color: #022959;
 }
+
+.name{
+  margin-left: 30px;
+  margin-top: 50px;
+  position: absolute;
+  border-style:solid;
+} */

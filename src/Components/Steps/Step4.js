@@ -8,8 +8,10 @@ class Step4 extends React.Component {
   render() {
     return (
       <div>
-        <h1>Finishing up</h1>
-        <h2>Double-check everything looks OK before confirming.</h2>
+        <h1>
+          <b>Finishing up</b>
+        </h1>
+        <p>Double-check everything looks OK before confirming.</p>
         <div className='step4monthly'>
           <div>
             <div>
@@ -25,7 +27,7 @@ class Step4 extends React.Component {
             <h2>+$12/mo</h2>
           </h3>
         </div>
-        <div className='step4yearly'>
+        {/* <div className='step4yearly'>
           <div>
             <div>
               <h2>Arcade(Yearly)</h2>
@@ -39,7 +41,7 @@ class Step4 extends React.Component {
             Total (per year)
             <h2>+$120/yr</h2>
           </h3>
-        </div>
+        </div> */}
       </div>
     );
   }

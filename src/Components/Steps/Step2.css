@@ -4,8 +4,11 @@
 #step2Container{
 font-family: 'Ubuntu', sans-serif;
 margin-right: 50px;
-  /* height: 300px;
-  width: 250px */
+  height: 500px;
+  width: 260px;
+  border-style: solid;
+  margin-top: 2rem;
+
 }
 
 
@@ -24,6 +27,11 @@ margin-right: 50px;
   justify-content: space-evenly;
 
 }
+#toggle{
+  display: flex;
+  flex-direction: row;
+
+}
 
 .yearlyOpts{
   display: flex;
@@ -38,4 +46,5 @@ margin-right: 50px;
   /* width: 20px;
   height: 20px; */
   font-size: 16px;
+  border-style: solid;
 }

@@ -1,10 +1,9 @@
-.monthlyOpts{
-  display: flex;
-  flex-direction: column;
-  border-color: black;
-}
-.opts{
-  display: flex;
-  flex-direction: row;
+.stepThreeAddOns {
+  diplay:flex;
+  position: absolute;
 }
 
+.onlineService {
+  border-style:solid;
+  height: 200px;
+}
