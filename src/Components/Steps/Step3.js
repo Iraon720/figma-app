@@ -2,16 +2,19 @@ import React from 'react';
 import './Step3.css';
 const wantMore = [
   {
+    id: 1,
     addOn: 'Online',
     monthly: 1,
     yearly: 10,
   },
   {
+    id: 2,
     addOn: 'Storage',
     monthly: 2,
     yearly: 20,
   },
   {
+    id: 3,
     addOn: 'Profile',
     monthly: 2,
     yearly: 20,

@@ -1,11 +1,8 @@
 {
   "folders": [
-	{
-		"path": "."
-	},
-	{
-		"path": "../Desktop/assets"
-	}
-],
+    {
+      "path": "."
+    }
+  ],
   "settings": {}
 }

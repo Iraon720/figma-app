@@ -4,11 +4,27 @@
 #step2Container{
 font-family: 'Ubuntu', sans-serif;
 margin-right: 50px;
-  height: 500px;
-  width: 260px;
+  height: 300px;
+  width: 600px;
   border-style: solid;
   margin-top: 2rem;
+  margin-left: 375px;
+ 
 
+}
+.toggle-btn{
+  margin-top: 1rem;
+  background-color: #F8F9FF;
+  border-radius: 8px;
+  height: 48px;
+  width: 450px;
+  align-items: center;
+
+}
+.type-of-billing{
+  display: flex;
+  flex-direction: column;
+  border-style: blue solid;
 }
 
 
@@ -20,31 +36,21 @@ margin-right: 50px;
   color: grey;
   font-size: 18px;
 }
-.monthlyOpts{
+.Opts{
   font-family: 'Ubuntu', sans-serif;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-
-}
-#toggle{
-  display: flex;
-  flex-direction: row;
-
-}
-
-.yearlyOpts{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-#arcade, #advanced, #pro{
-  display: flex ;
   flex-direction: column;
-  border-radius: 10px;
-  border-color: black;
-  /* width: 20px;
-  height: 20px; */
-  font-size: 16px;
-  border-style: solid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+
 }
+
+
+
+

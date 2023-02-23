@@ -1,0 +1,78 @@
+.total{
+  background-color: #F8F9FF;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  width: 540px;
+  height: auto;
+}
+.step4-container {
+  margin-left: 250px;
+  margin-top: 35px;
+}
+.total p{
+  color: grey;
+}
+.total-per{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.plan-choice{
+  padding-bottom: 1.3rem;
+  border-bottom: #9699AA solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.plan-choice h4{
+  font-size: 1rem;
+  font-weight: bold;
+  color: #022959;
+  
+}
+.plan-choice span{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #022959;
+  margin-top: 2.5rem;
+
+}
+.type-of-service{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.type-of-service span{
+margin-top: 1rem;
+}
+.list-of-add{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+  .list-of-add span{
+    margin-top: 1rem;
+  }
+  
+
+.finished p{
+  color: grey;
+}
+.finished{
+  width: -500px;
+}
+.total-per p{
+  color: grey;
+  margin-top: 2rem;
+   margin-left: 4rem;
+}
+.total-per span{
+  color:#483EFF;
+  font-weight: bolder;
+  font-size:23px;
+  margin-top: 1.5rem;
+  margin-right: 1.5rem;
+}

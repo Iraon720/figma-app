@@ -1,26 +1,33 @@
 import React from 'react';
 import './Step2.css';
 import Switch from 'react-switch';
-const activeStyles = { color: '#022959', backgroundColor: 'red' };
-const defaultStyles = { color: 'black', backgroundColor: 'transparent' };
+
+const activeStyles = {
+  color: '#022959',
+  backgroundColor: 'hsl(217, 100%, 97%)',
+};
+const defaultStyles = { color: '', backgroundColor: 'white' };
 const planSelection = [
   {
+    id: 1,
     plan: 'Arcade',
     monthly: 9,
     yearly: 90,
-    src: 'add path to image here',
+    src: './images/icon-arcade.svg',
   },
   {
+    id: 2,
     plan: 'Advanced',
     monthly: 12,
     yearly: 120,
-    src: 'add path to image here',
+    src: './images/icon-advanced.svg',
   },
   {
+    id: 3,
     plan: 'Pro',
     monthly: 15,
     yearly: 150,
-    src: 'add path to image here',
+    src: './images/icon-pro.svg',
   },
 ];
 
@@ -36,10 +43,11 @@ class Step2 extends React.Component {
         <p className='subheader'>
           You have the option of monthly or yearly billing.
         </p>
-
+      
+<div className='plan-container'>
         {planSelection.map((plan, i) => {
           return (
-            <div
+            <div className='.Opts'
             key = {i}
               id='arcade'
               onClick={() => this.props.changePlan(plan)}
@@ -50,29 +58,24 @@ class Step2 extends React.Component {
               }
             >
               <p>{plan.plan}</p>
+              <div className='type-of-billing'>
               <p>
                 {this.props.billingType === 'Monthly'
                   ? plan.monthly
-                  : plan.yearly}
+                  : plan.yearly + '2 months free'}
               </p>
+              </div>
             </div>
+            
           );
         })}
 
-        {/* <div id='toggle'>
-          Monthly
-          <input
-            type='switch'
-            name='toggle'
-            onChange={this.props.handleToggle}
-          ></input>
-          Yearly
-        </div> */}
+      
 
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <div className='toggle-btn' style={{ display: 'flex', flexDirection: 'row',justifyContent:'space-evenly' }}>
           <div>Monthly</div>
           <Switch
-            onChange={() => this.props.changeBillingType()}
+            onChange={() => this.props.handleTotal()}
             uncheckedIcon={false}
             checkedIcon={false}
             onColor='#02295a'
@@ -81,12 +84,7 @@ class Step2 extends React.Component {
           />
           <div>Yearly</div>
         </div>
-
-        {/* <div className='yearlyOpts'>
-          <div id='arcade'>Arcade $90/yr 2 months free</div>
-          <div id='advanced'>Advanced $120/yr 2 months free</div>
-          <div id='pro'>Pro $150/yr 2 months free</div>
-        </div> */}
+</div>
       </div>
     );
   }

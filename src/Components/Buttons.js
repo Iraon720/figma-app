@@ -13,16 +13,16 @@ class Buttons extends React.Component {
           display: 'flex',
           flexDirection: 'row-reverse',
           alignItems: 'flex-end',
-          justifyContent: 'space-between',
-          marginBottom: '1rem',
+        
+          marginTop: '5rem',
           marginRight: '2rem',
           
         }}
       >
-        <div className='next'style={{ color: '#022959' }}>
+        <div className='next'style={{ color: '#022959',marginLeft:'6rem' , marginRight:'-2rem',position:'absolute'}}>
           <button onClick={this.props.handleNext}>Next Step</button>
         </div>
-        <div style={{ color: 'white', marginRight: '6rem' }}>
+        <div style={{ color: 'white', marginRight: '24rem',backgroundColor:'white' }}>
           <button onClick={this.props.handleGoBack}>Go Back</button>
         </div>
       </div>

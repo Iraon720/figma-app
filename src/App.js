@@ -15,11 +15,17 @@ class App extends React.Component {
       name: ' ',
       email: ' ',
       number: ' ',
-      selectedPlan: {},
+      selectedPlan:{
+        plan: 'Arcade',
+        monthly: 9,
+        yearly: 90
+},
       billingType: 'Monthly',
+      id: 1,
       addOns: {},
-      totalPrice: 0,
-      selectedAddOns: []
+      total:0
+     
+      
     };
     this.handleStepDecrease = this.handleStepDecrease.bind(this);
     this.handleStepIncrease = this.handleStepIncrease.bind(this);
@@ -29,11 +35,18 @@ class App extends React.Component {
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleNumberChange = this.handleNumberChange.bind(this);
     this.handleCheckBoxes = this.handleCheckBoxes.bind(this);
-    
     this.planAddOns=this.planAddOns.bind(this);
-
     this.handleToggle = this.handleToggle.bind(this);
-  }
+    
+
+   handleTotal = () => {
+     const { selectedPlan } = this.state;
+     const { monthly, yearly } = selectedPlan;
+
+     const totalPrice = monthly ? monthly : yearly  // Calculate monthly or yearly price
+     this.setState({ total: totalPrice }); // Set the total price in state and doesn't need to be binded
+   };
+}
   //Navigation carousel with buttons
   handleStepIncrease = () => {
     this.setState({ currentStep: this.state.currentStep + 1 });
@@ -75,8 +88,12 @@ class App extends React.Component {
 
 // Step 3 for checkboxes
 handleCheckBoxes = (e) => {
-  this.setState({selectedAddOns:e.target.checked});
+  this.setState({addOns:e.target.checked.id});
+
+  
 }
+// Step 4 carrying collected data
+
 
 
 
@@ -90,49 +107,50 @@ handleCheckBoxes = (e) => {
 
   render() {
     return (
-      <div id='body'>
-        <div id='cardHolder'>
-          <SideNav
-            currentStep={this.state.currentStep}
-            changeStep={this.handleChangeStep}
-          />
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            {this.state.currentStep === 1 && (
-              <Step1
-                name={this.state.name}
-                email={this.state.email}
-                number={this.state.number}
-                handleName={this.handleNameChange}
-                handleEmail={this.handleEmailChange}
-                handleNumber={this.handleNumberChange}
-              />
-            )}
+      <div id='cardHolder'>
+        <SideNav
+          currentStep={this.state.currentStep}
+          changeStep={this.handleChangeStep}
+        />
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          {this.state.currentStep === 1 && (
+            <Step1
+              name={this.state.name}
+              email={this.state.email}
+              number={this.state.number}
+              handleName={this.handleNameChange}
+              handleEmail={this.handleEmailChange}
+              handleNumber={this.handleNumberChange}
+            />
+          )}
 
-            {this.state.currentStep === 2 && (
-              <Step2
-                selectedPlan={this.state.selectedPlan}
-                changePlan={this.handlePlanSelection}
-                billingType={this.state.billingType}
-                changeBillingType={this.handleToggle}
-              />
-            )}
-            {this.state.currentStep === 3 && (
-              <Step3
+          {this.state.currentStep === 2 && (
+            <Step2
+              selectedPlan={this.state.selectedPlan}
+              changePlan={this.handlePlanSelection}
+              handleTotal={this.handleTotal}
+              billingType={this.state.billingType}
+              changeBillingType={this.handleToggle}
+            />
+          )}
+          {this.state.currentStep === 3 && (
+            <Step3
               addOns={this.state.addOns}
               addOnSelection={this.planAddOns}
               billingType={this.state.billingType}
               addToTotal={this.handleToggle}
-              selectedAddOns={this.state.selectedAddOns} 
+              selectedAddOns={this.state.selectedAddOns}
               handleCheckBoxes={this.handleCheckBoxes}
-                />
-            )}
-            {this.state.currentStep === 4 && <Step4 />}
-
-            <Buttons
-              handleNext={this.handleStepIncrease}
-              handleGoBack={this.handleStepDecrease}
             />
-          </div>
+          )}
+          {this.state.currentStep === 4 && (
+            <Step4 selectedPlan={this.state.selectedPlan} />
+          )}
+
+          <Buttons
+            handleNext={this.handleStepIncrease}
+            handleGoBack={this.handleStepDecrease}
+          />
         </div>
       </div>
     );
