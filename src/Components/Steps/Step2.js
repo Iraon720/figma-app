@@ -47,26 +47,28 @@ class Step2 extends React.Component {
 <div className='plan-container'>
         {planSelection.map((plan, i) => {
           return (
-            <div className='.Opts'
-            key = {i}
+            <div
+              className='.Opts'
+              key={i}
               id='arcade'
-              onClick={() => this.props.changePlan(plan)}
+              onClick={() => {
+                this.props.handleTotal();
+                this.props.changePlan(plan);
+                 
+              }}
               style={
-                this.props.selectedPlan === plan
-                  ? activeStyles
-                  : defaultStyles
+                this.props.selectedPlan === plan ? activeStyles : defaultStyles
               }
             >
               <p>{plan.plan}</p>
               <div className='type-of-billing'>
-              <p>
-                {this.props.billingType === 'Monthly'
-                  ? plan.monthly
-                  : plan.yearly + '2 months free'}
-              </p>
+                <p>
+                  {this.props.billingType === 'Monthly'
+                    ? plan.monthly
+                    : plan.yearly + '2 months free'}
+                </p>
               </div>
             </div>
-            
           );
         })}
 
@@ -75,7 +77,7 @@ class Step2 extends React.Component {
         <div className='toggle-btn' style={{ display: 'flex', flexDirection: 'row',justifyContent:'space-evenly' }}>
           <div>Monthly</div>
           <Switch
-            onChange={() => this.props.handleTotal()}
+            onChange={() => this.props.changeBillingType()}
             uncheckedIcon={false}
             checkedIcon={false}
             onColor='#02295a'

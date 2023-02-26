@@ -19,14 +19,35 @@ class App extends React.Component {
         plan: 'Arcade',
         monthly: 9,
         yearly: 90
-},
+
+      },
       billingType: 'Monthly',
       id: 1,
-      addOns: {},
-      total:0
-     
-      
-    };
+      addOns:[{
+        selected:false,
+        addOn: 'Online',
+        monthly: 1,
+        yearly: 10
+      },
+      {
+        selected:false,
+        addOn:'Storage',
+        monthly: 2,
+        yearly:20,
+},
+      {
+        selected:false,
+        addOn:'Profile',
+        monthly: 2,
+        yearly:20,
+      }
+    ],
+      total:0,
+      addOnPrice: 0
+     };
+
+  
+
     this.handleStepDecrease = this.handleStepDecrease.bind(this);
     this.handleStepIncrease = this.handleStepIncrease.bind(this);
     this.handleChangeStep = this.handleChangeStep.bind(this);
@@ -38,15 +59,34 @@ class App extends React.Component {
     this.planAddOns=this.planAddOns.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
     
+  
+    this.handleTotal = () => {
+      const { selectedPlan, billingType } = this.state;
+      const { monthly, yearly } = selectedPlan;
 
-   handleTotal = () => {
-     const { selectedPlan } = this.state;
-     const { monthly, yearly } = selectedPlan;
+      const totalPrice =
+        billingType === 'Monthly'
+          ? monthly
+          : billingType === 'Yearly'
+          ? yearly
+          : null; // Calculate monthly or yearly price based on billingType
 
-     const totalPrice = monthly ? monthly : yearly  // Calculate monthly or yearly price
-     this.setState({ total: totalPrice }); // Set the total price in state and doesn't need to be binded
-   };
-}
+      if (totalPrice !== null) {
+        this.setState({ total: totalPrice }); // if total price is not null, then execute code to update state
+      }
+    };
+    this.handleAddOnTotal = () => {
+      const {addOns,billingType} = this.state;
+      const {monthly,yearly} = addOns;
+
+      const addOnTotal = billingType === 'Monthly' ? monthly : billingType === 'Yearly' ? yearly : null;
+      if(addOnTotal !== null) {
+        this.setState({ addOnPrice: addOnTotal}); 
+      }
+};
+
+
+  }
   //Navigation carousel with buttons
   handleStepIncrease = () => {
     this.setState({ currentStep: this.state.currentStep + 1 });
@@ -89,9 +129,7 @@ class App extends React.Component {
 // Step 3 for checkboxes
 handleCheckBoxes = (e) => {
   this.setState({addOns:e.target.checked.id});
-
-  
-}
+};
 // Step 4 carrying collected data
 
 
@@ -123,7 +161,6 @@ handleCheckBoxes = (e) => {
               handleNumber={this.handleNumberChange}
             />
           )}
-
           {this.state.currentStep === 2 && (
             <Step2
               selectedPlan={this.state.selectedPlan}
@@ -135,6 +172,7 @@ handleCheckBoxes = (e) => {
           )}
           {this.state.currentStep === 3 && (
             <Step3
+              handleAddOnTotal={this.handleAddOnTotal}
               addOns={this.state.addOns}
               addOnSelection={this.planAddOns}
               billingType={this.state.billingType}
@@ -146,7 +184,7 @@ handleCheckBoxes = (e) => {
           {this.state.currentStep === 4 && (
             <Step4 selectedPlan={this.state.selectedPlan} />
           )}
-
+          ;
           <Buttons
             handleNext={this.handleStepIncrease}
             handleGoBack={this.handleStepDecrease}
@@ -154,8 +192,8 @@ handleCheckBoxes = (e) => {
         </div>
       </div>
     );
+          }     
   }
 
-}
 
 export default App;

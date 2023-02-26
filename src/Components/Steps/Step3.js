@@ -39,7 +39,11 @@ class Step3 extends React.Component {
                 type='checkbox'
                 id={i}
                 className='checkbox'
-                onClick={() => this.props.addOnSelection(addOn)}
+                onClick={
+                  () =>{
+                    this.props.handleAddOnTotal();
+                     this.props.addOnSelection(addOn);
+                }}
               />
               <div className='description'>
                 <h4>{addOn.addOn} service</h4>
